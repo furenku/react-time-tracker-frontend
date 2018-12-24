@@ -4,6 +4,11 @@ import './styles/App.scss';
 import { Route, Link } from 'react-router-dom';
 
 import Home from './components/Home/Home.js';
+
+import ProjectsList from './components/Projects/ProjectsList/ProjectsList.js';
+import ProjectDetail from './components/Projects/ProjectDetail/ProjectDetail.js';
+import ProjectNew from './components/Projects/ProjectNew/ProjectNew.js';
+
 import TasksList from './components/Tasks/TasksList/TasksList.js';
 
 class App extends Component {
@@ -20,6 +25,11 @@ class App extends Component {
                 </Link>
               </li>
               <li>                           
+                <Link to="/projects">
+                    Projects
+                </Link>
+              </li>
+              <li>                           
                 <Link to="/tasks">
                     Tasks
                 </Link>
@@ -32,6 +42,11 @@ class App extends Component {
         <main>
           
           <Route exact path="/" component={Home}/>
+          
+          <Route exact path="/projects" component={ProjectsList}/>
+          <Route exact path="/projects/new" component={ProjectNew}/>
+          <Route exact path="/project/:id" component={ProjectDetail}/>
+
           <Route exact path="/tasks" component={TasksList}/>
           
         </main>
