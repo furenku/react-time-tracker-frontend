@@ -6,10 +6,10 @@ import { Route, Link } from 'react-router-dom';
 import Home from './components/Home/Home.js';
 
 import ProjectsList from './components/Projects/ProjectsList/ProjectsList.js';
-import ProjectDetail from './components/Projects/ProjectDetail/ProjectDetail.js';
-import ProjectNew from './components/Projects/ProjectNew/ProjectNew.js';
 
 import TasksList from './components/Tasks/TasksList/TasksList.js';
+import TaskDetail from './components/Tasks/TaskDetail/TaskDetail.js';
+import TaskNew from './components/Tasks/TaskNew/TaskNew.js';
 
 class App extends Component {
   render() {
@@ -44,10 +44,10 @@ class App extends Component {
           <Route exact path="/" component={Home}/>
           
           <Route exact path="/projects" component={ProjectsList}/>
-          <Route exact path="/projects/new" component={ProjectNew}/>
-          <Route exact path="/project/:id" component={ProjectDetail}/>
 
           <Route exact path="/tasks" component={TasksList}/>
+          <Route exact path="/tasks/new" component={TaskNew}/>
+          <Route exact path="/task/:id" component={TaskDetail}/>
           
         </main>
 
