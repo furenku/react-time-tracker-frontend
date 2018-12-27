@@ -33,9 +33,7 @@ class TasksList extends Component {
             return this.props.tasks.map( (task,i) => {
                 return (
                     <li key={i} onClick={()=>this.openTask(task.id)}>
-                        {/* <Link to={`/task/${task.id}`}> */}
-                            {task.name}
-                        {/* </Link> */}
+                        {task.name}
                     </li>
                 )
             })
@@ -47,7 +45,7 @@ class TasksList extends Component {
                 <h1>
                     TasksList
                 </h1>
-                <Link to="/task/new">
+                <Link to="/tasks/new">
                         <button>
                             New Task
                         </button>

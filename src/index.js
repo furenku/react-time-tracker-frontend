@@ -44,7 +44,6 @@ const store = createStore(
     //     applyMiddleware(thunk));
 
 store.dispatch(fetchAllTasks());
-store.subscribe(()=>{console.log("redux")})
 
 ReactDOM.render(
     

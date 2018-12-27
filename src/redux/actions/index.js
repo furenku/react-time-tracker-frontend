@@ -6,22 +6,11 @@ import { push } from 'connected-react-router'
 
 const apiUrl = 'http://localhost:4000/tasks';
 
-export const createTask = ({ name, description }) => {
-  return (dispatch) => {
-    return axios.post(`${apiUrl}`, {name, description})
-      .then(response => {
-        dispatch(createTaskSuccess(response.data))
-      })
-      .catch(error => {
-        throw(error);
-      });
-  };
-};
-
 export const createTaskSuccess =  (data) => {
   return {
     type: ADD_TASK,
     payload: {
+      id: data.id,
       name: data.name,
       description: data.description
     }
@@ -36,19 +25,6 @@ export const deleteTaskSuccess = id => {
     }
   }
 }
-
-export const deleteTask = id => {
-  return (dispatch) => {
-    return axios.delete(`${apiUrl}/${id}`)
-      .then(response => {
-        dispatch(deleteTaskSuccess(response.data))
-      })
-      .catch(error => {
-        throw(error);
-      });
-  };
-};
-
 
 
 export const fetchTask = (task) => {
@@ -67,6 +43,39 @@ export const fetchTasks = (tasks) => {
     }
   }
 };
+
+
+
+
+
+export const createTask = ({ name, description }) => {
+  return (dispatch) => {
+    return axios.post(`${apiUrl}`, {name, description})
+      .then(response => {
+        dispatch(createTaskSuccess(response.data))
+      })
+      .catch(error => {
+        throw(error);
+      });
+  };
+};
+
+
+
+
+export const deleteTask = id => {
+  return (dispatch) => {
+    return axios.delete(`${apiUrl}/${id}`)
+      .then(response => {
+        dispatch(deleteTaskSuccess(response.data))
+      })
+      .catch(error => {
+        throw(error);
+      });
+  };
+};
+
+
 
 
 
