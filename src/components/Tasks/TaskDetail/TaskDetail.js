@@ -4,8 +4,8 @@ import { connect } from "react-redux";
 import { fetchSingleTask } from "../../../redux/actions/index";
 
 const mapStateToProps = (state,ownProps) => {
-    if( !! state.currentTask ) {
-        return { id: ownProps.match.params.id, name: state.currentTask.name, description: state.currentTask.description };
+    if( !! state.tasks.currentTask ) {
+        return { id: ownProps.match.params.id, name: state.tasks.currentTask.name, description: state.tasks.currentTask.description };
     } else return { id: ownProps.match.params.id }
 };
 function mapDispatchToProps(dispatch) {

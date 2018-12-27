@@ -2,6 +2,7 @@
 
 import { ADD_TASK, DELETE_TASK, FETCH_TASK, FETCH_TASKS } from './types';
 import axios from 'axios';
+import { push } from 'connected-react-router'
 
 const apiUrl = 'http://localhost:4000/tasks';
 
@@ -67,6 +68,20 @@ export const fetchTasks = (tasks) => {
   }
 };
 
+
+
+export const goToTask = (id) => {
+  return (dispatch) => {
+    return axios.get(`${apiUrl}/${id}`)
+      .then(response => {
+        dispatch(fetchTask(response.data))
+        dispatch(push(`/task/${id}`))
+      })
+      .catch(error => {
+        throw(error);
+      });
+  };
+};
 
 export const fetchSingleTask = (id) => {
   return (dispatch) => {
