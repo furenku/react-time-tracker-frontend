@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import './styles/App.scss';
 
-import { Route, Link } from 'react-router-dom';
+import { Switch, Route, Link } from 'react-router-dom';
 
 import Home from './components/Home/Home.js';
 
-import ProjectsList from './components/Projects/ProjectsList/ProjectsList.js';
-import ProjectDetail from './components/Projects/ProjectDetail/ProjectDetail.js';
-import ProjectNew from './components/Projects/ProjectNew/ProjectNew.js';
-
 import TasksList from './components/Tasks/TasksList/TasksList.js';
+import TaskDetail from './components/Tasks/TaskDetail/TaskDetail.js';
+import TaskNew from './components/Tasks/TaskNew/TaskNew.js';
+
+import ProjectsList from './components/Projects/ProjectsList/ProjectsList.js';
 
 class App extends Component {
   render() {
@@ -40,14 +40,16 @@ class App extends Component {
         </header>
 
         <main>
-          
-          <Route exact path="/" component={Home}/>
-          
-          <Route exact path="/projects" component={ProjectsList}/>
-          <Route exact path="/projects/new" component={ProjectNew}/>
-          <Route exact path="/project/:id" component={ProjectDetail}/>
+          <Switch>
+            <Route exact path="/" component={Home}/>
+            
+            <Route exact path="/tasks" component={TasksList}/>
+            <Route exact path="/task/new" component={TaskNew}/>
+            <Route exact path="/task/:id" component={TaskDetail}/>
 
-          <Route exact path="/tasks" component={TasksList}/>
+            <Route exact path="/projects" component={ProjectsList}/>
+            
+          </Switch>
           
         </main>
 

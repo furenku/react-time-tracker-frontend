@@ -22,6 +22,16 @@ class Home extends Component {
                                 Tasks
                             </Link>
                         </li>
+                        <li>
+                            <Link to="/task/new">
+                                New Task
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to="/task/0">
+                                One Task
+                            </Link>
+                        </li>
                     </ul>
                 </nav>
                 
