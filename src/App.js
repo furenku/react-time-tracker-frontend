@@ -5,7 +5,7 @@ import { Switch, Route, Link } from 'react-router-dom';
 
 import Home from './components/Home/Home.js';
 
-import TasksList from './components/Tasks/TasksList/TasksList.js';
+import Tasks from './components/Tasks/Tasks/Tasks.js';
 import TaskDetail from './components/Tasks/TaskDetail/TaskDetail.js';
 import TaskNew from './components/Tasks/TaskNew/TaskNew.js';
 
@@ -43,7 +43,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={Home}/>
             
-            <Route exact path="/tasks" component={TasksList}/>
+            <Route exact path="/tasks" component={Tasks}/>
             <Route exact path="/task/new" component={TaskNew}/>
             <Route exact path="/task/:id" component={TaskDetail}/>
 
